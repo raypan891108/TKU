@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+::selection{
+    background: #f7bcbc;
+}
+.header{
+    width: 100%;
+    background: linear-gradient(black, rgba(195, 142, 236, 0.293));
+    background-size: 100%; 
+    color: white;
+    position: relative;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 6%;
+}
+nav ul{
+    flex: 1;
+    text-align: right;
+    padding-right: 40px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+nav ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: rgb(187, 223, 240);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+nav ul li:hover::after{
+    width: 100%;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+h1{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* find inspiration : https://codepen.io/t_afif/pen/eYeqvMe */
+img {
+    max-height:300px;
+    --color: #72dfeb; /* the border color */
+    --border: 10px;   /* the border thickness*/
+    --offset: 20px;   /* control the offset*/
+    --gap: 5px;       /* the gap on hover */
+    
+    --_c: var(--color) var(--border), #0000 0 calc(100% - var(--border)),var(--color) 0;
+    --_o: calc(3*var(--offset));
+    padding: 
+        calc(var(--gap) + var(--border))
+        calc(var(--gap) + var(--border) + var(--offset))
+        calc(var(--gap) + var(--border) + var(--offset))
+        calc(var(--gap) + var(--border));
+    background: 
+        linear-gradient(      var(--_c)) var(--_o) var(--_o), 
+        linear-gradient(90deg,var(--_c)) var(--_o) var(--_o);
+    background-size: calc(100% - var(--_o)) calc(100% - var(--_o));
+    background-repeat: no-repeat;
+    opacity: .1;
+    transition: .5s;
+    cursor: pointer;
+}
+img:hover{
+    background-position: 0px 0px;
+    background-size: calc(100% - var(--offset)) calc(100% - var(--offset));
+    opacity: 1;
+}
+
+.pic {
+    display: grid;
+    grid-gap: 70px;
+    height: 100vh;
+    margin: 0px;
+    grid-auto-flow: column;
+    place-content: center;
+}
